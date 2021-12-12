@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-""" 抓包核心 """
 import os
 import shutil
 from tempfile import NamedTemporaryFile
@@ -34,7 +33,6 @@ arp_dict = {
     8: "InARP-req",
     9: "InARP-rep"
 }
-# icmpv6 code字典
 icmpv6_code = {
     1: {
         0: "No route to destination",
@@ -63,8 +61,6 @@ ports = {
     20: "FTP_Data",
     22: "SSH"
 }
-
-# HTTPS解析
 content_type = {
     '14': "Change Cipher Spec",
     '15': "Alert Message",
@@ -72,11 +68,7 @@ content_type = {
     '17': "Application Data"
 }
 version = {'00': "SSLv3", '01': "TLSv1.0", '02': "TLSv1.1", '03': "TLSv1.2"}
-
-# 停止抓包的线程
 stop_capturing_thread = Event()
-
-# 数据包背景颜色字典
 color_dict = {
     "TCP": "#e7e6ff",
     "TCPv6": "#e7e6ff",
