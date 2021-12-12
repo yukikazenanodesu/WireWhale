@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-工具集
-可获取网卡列表, 某个网卡的下载速度上传速度等
-"""
-
 import time
 from platform import system
 from psutil import net_if_addrs, net_io_counters
