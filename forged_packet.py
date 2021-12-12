@@ -7,8 +7,6 @@ from scapy.layers.inet import *
 import sys
 import threading
 
-
-"""获取控制台内容"""
 class EmittingStream(QtCore.QObject):
     textWritten = QtCore.pyqtSignal(str)  # 定义一个发送str的信号
 
