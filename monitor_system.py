@@ -98,9 +98,6 @@ class Ui_Form(object):
         self.timer.timeout.connect(self.conList.scrollToBottom)
 
     def show_process_tree(self):
-        """
-        添加节点
-        """
         self.App_Tree.clear()
         process_name, process_conn = self.monitor.getProcessConnections()
         for name in process_name:
