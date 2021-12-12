@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-""" 流量监测系统 """
 from threading import Thread, Event
 from scapy.sendrecv import sniff
 from scapy.layers.inet import *
@@ -7,12 +6,7 @@ import psutil
 
 
 class Monitor:
-    """
-    流量监测
-    """
-    # 程序使用的端口
     process_ports = []
-    # 监测系统是否开始
     start_flag = Event()
     window = None
 
@@ -21,10 +15,6 @@ class Monitor:
         self.start_flag.set()
 
     def getProcessList(self):
-        """
-        获取有网络连接的进程列表
-        :return :返回进程列表
-        """
         process_list = set()
         for process in psutil.process_iter():
             connections = process.connections()
@@ -33,10 +23,6 @@ class Monitor:
         return list(process_list)
 
     def getProcessConnections(self):
-        """
-        获取进程使用的网络连接
-        :return : 返回进程名字列表和进程对应的连接列表
-        """
         process_name = set()
         process_conn = {}
         for process in psutil.process_iter():
